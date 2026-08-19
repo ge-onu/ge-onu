@@ -6,18 +6,6 @@
   </picture>
 </p>
 
-<br>
-
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./assets/wander-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="./assets/wander-light.svg">
-    <img alt="" src="./assets/wander-light.svg" width="86%">
-  </picture>
-</p>
-
-<br>
-
 <p align="center">
   <img
     src="https://github-readme-activity-graph.vercel.app/graph?username=ge-onu&bg_color=00000000&color=8B9099&line=7C8CF2&point=E9A497&area=true&area_color=7C8CF2&hide_border=true&hide_title=true&grid=false&radius=8"
@@ -26,7 +14,7 @@
   />
 </p>
 
-<br><br>
+<br>
 
 <p align="center">
   <sub><i>some things i've worked with along the way</i></sub>
@@ -41,6 +29,4 @@
 
 <br>
 
-<p align="center">
-  <sub>ge-onu</sub>
-</p>
+<p align="center"><sub>ge-onu</sub></p>

@@ -1,82 +1,125 @@
-<svg width="960" height="430" viewBox="0 0 960 430" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="960" height="330" viewBox="0 0 960 330" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="4" result="blur"/>
-      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-    <linearGradient id="bg" x1="50" y1="30" x2="910" y2="400" gradientUnits="userSpaceOnUse">
+    <linearGradient id="bg" x1="60" y1="20" x2="900" y2="315" gradientUnits="userSpaceOnUse">
       <stop stop-color="#FBF8F2"/>
-      <stop offset="1" stop-color="#F4F0E8"/>
+      <stop offset=".6" stop-color="#F8F4ED"/>
+      <stop offset="1" stop-color="#F2EEE6"/>
     </linearGradient>
+
+    <radialGradient id="mistBlue">
+      <stop offset="0" stop-color="#7C8CF2" stop-opacity=".18"/>
+      <stop offset="1" stop-color="#7C8CF2" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="mistMint">
+      <stop offset="0" stop-color="#83C6A7" stop-opacity=".13"/>
+      <stop offset="1" stop-color="#83C6A7" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="mistPeach">
+      <stop offset="0" stop-color="#E9A497" stop-opacity=".12"/>
+      <stop offset="1" stop-color="#E9A497" stop-opacity="0"/>
+    </radialGradient>
+
+    <filter id="blur16" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="16"/>
+    </filter>
+    <filter id="glow2" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="2.2"/>
+    </filter>
   </defs>
 
   <style>
-    .title { font: 600 40px ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; letter-spacing: 2px; fill: #262831; }
-    .tagline { font: 400 19px ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; letter-spacing: .6px; fill: #727784; }
-    .line { stroke: #8C919C; stroke-width: 1; stroke-linecap: round; }
-    .tiny { fill: #A2A6AF; }
-    .blue { fill: #7C8CF2; }
-    .peach { fill: #E9A497; }
-    .mint { fill: #83C6A7; }
-    .gold { fill: #E6B85C; }
+    .title {
+      font: 600 40px ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 2px;
+      fill: #282A33;
+    }
+    .tagline {
+      font: 400 18px ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: .75px;
+      fill: #737986;
+    }
 
-    @keyframes driftA { 0%,100%{transform:translate(0,0)} 45%{transform:translate(13px,-8px)} 72%{transform:translate(5px,6px)} }
-    @keyframes driftB { 0%,100%{transform:translate(0,0)} 40%{transform:translate(-11px,8px)} 75%{transform:translate(7px,2px)} }
-    @keyframes driftC { 0%,100%{transform:translate(0,0)} 52%{transform:translate(8px,10px)} 80%{transform:translate(-5px,4px)} }
-    @keyframes breathe { 0%,100%{opacity:.42} 50%{opacity:1} }
-    @keyframes lineA { 0%,18%,100%{opacity:0} 32%,56%{opacity:.22} 72%{opacity:0} }
-    @keyframes lineB { 0%,38%,100%{opacity:0} 52%,73%{opacity:.18} 88%{opacity:0} }
-    @keyframes dash { from{stroke-dashoffset:24} to{stroke-dashoffset:0} }
+    @keyframes mist1 {
+      0%,100% { transform: translate(0,0) scale(1); opacity:.55; }
+      40% { transform: translate(14px,-8px) scale(1.08); opacity:.72; }
+      75% { transform: translate(-7px,5px) scale(.96); opacity:.46; }
+    }
+    @keyframes mist2 {
+      0%,100% { transform: translate(0,0) scale(1); opacity:.45; }
+      45% { transform: translate(-12px,7px) scale(1.1); opacity:.63; }
+      80% { transform: translate(8px,-4px) scale(.97); opacity:.38; }
+    }
+    @keyframes breathe {
+      0%,100% { opacity:.25; }
+      50% { opacity:.9; }
+    }
+    @keyframes twinkle {
+      0%,100% { opacity:.28; transform:scale(.9); }
+      50% { opacity:.8; transform:scale(1.12); }
+    }
 
-    #a { animation: driftA 19s ease-in-out infinite; transform-box: fill-box; transform-origin:center; }
-    #b { animation: driftB 23s ease-in-out infinite; transform-box: fill-box; transform-origin:center; }
-    #c { animation: driftC 17s ease-in-out infinite; transform-box: fill-box; transform-origin:center; }
-    #d { animation: driftA 26s ease-in-out infinite reverse; transform-box: fill-box; transform-origin:center; }
-    #e { animation: driftB 21s ease-in-out infinite reverse; transform-box: fill-box; transform-origin:center; }
-    #f { animation: driftC 28s ease-in-out infinite reverse; transform-box: fill-box; transform-origin:center; }
-
-    #l1 { animation: lineA 19s ease-in-out infinite, dash 5s linear infinite; stroke-dasharray: 3 7; }
-    #l2 { animation: lineB 23s ease-in-out infinite, dash 6s linear infinite reverse; stroke-dasharray: 3 8; }
-    #l3 { animation: lineA 27s ease-in-out infinite 4s, dash 7s linear infinite; stroke-dasharray: 2 9; }
-    .pulse { animation: breathe 5.5s ease-in-out infinite; }
+    .m1 { animation:mist1 26s ease-in-out infinite; transform-box:fill-box; transform-origin:center; }
+    .m2 { animation:mist2 32s ease-in-out infinite; transform-box:fill-box; transform-origin:center; }
+    .pulse { animation:breathe 8s ease-in-out infinite; }
+    .tw { animation:twinkle 10s ease-in-out infinite; transform-box:fill-box; transform-origin:center; }
   </style>
 
-  <rect x="1" y="1" width="958" height="428" rx="28" fill="url(#bg)" stroke="#E6E0D7"/>
+  <rect x="1" y="1" width="958" height="328" rx="26" fill="url(#bg)" stroke="#E2DDD4"/>
 
-  <path id="l1" class="line" d="M188 121 C286 74 355 102 424 165"/>
-  <path id="l2" class="line" d="M548 151 C644 100 718 131 792 205"/>
-  <path id="l3" class="line" d="M277 302 C366 350 574 350 678 288"/>
+  <!-- barely visible moving ambient mist -->
+  <ellipse class="m1" cx="245" cy="107" rx="155" ry="72" fill="url(#mistBlue)" filter="url(#blur16)"/>
+  <ellipse class="m2" cx="721" cy="221" rx="178" ry="78" fill="url(#mistMint)" filter="url(#blur16)"/>
+  <ellipse class="m1" style="animation-duration:34s;animation-direction:reverse" cx="690" cy="92" rx="120" ry="58" fill="url(#mistPeach)" filter="url(#blur16)"/>
 
-  <g id="a">
-    <circle cx="176" cy="126" r="4.5" class="blue" filter="url(#softGlow)"/>
-    <circle cx="159" cy="148" r="2" class="tiny"/>
-  </g>
-  <g id="b">
-    <circle cx="300" cy="77" r="6" class="peach"/>
-    <circle cx="319" cy="94" r="2.5" class="gold pulse"/>
-  </g>
-  <g id="c">
-    <circle cx="798" cy="203" r="5.5" class="mint" filter="url(#softGlow)"/>
-    <circle cx="824" cy="180" r="2" class="tiny"/>
-  </g>
-  <g id="d">
-    <circle cx="693" cy="292" r="6.5" class="gold"/>
-    <circle cx="715" cy="315" r="2.2" class="blue pulse"/>
-  </g>
-  <g id="e">
-    <circle cx="274" cy="306" r="5.2" class="mint"/>
-    <circle cx="250" cy="287" r="2" class="tiny"/>
-  </g>
-  <g id="f">
-    <circle cx="866" cy="91" r="3.5" class="peach"/>
-    <circle cx="93" cy="244" r="3" class="gold pulse"/>
-  </g>
+  <!-- independent particles: each has a different wandering path and speed -->
+  <circle r="3.3" fill="#7C8CF2" filter="url(#glow2)">
+    <animateMotion dur="29s" repeatCount="indefinite"
+      path="M85 110 C155 62 254 74 319 125 S443 193 523 139 S664 64 742 101 S850 169 909 126"/>
+  </circle>
 
-  <circle cx="407" cy="111" r="2.2" class="tiny pulse"/>
-  <circle cx="555" cy="92" r="1.8" class="tiny"/>
-  <circle cx="628" cy="350" r="2.1" class="tiny pulse"/>
-  <circle cx="365" cy="352" r="1.8" class="tiny"/>
+  <circle r="2.4" fill="#83C6A7" opacity=".9">
+    <animateMotion dur="37s" begin="-12s" repeatCount="indefinite"
+      path="M111 236 C192 278 279 248 349 206 S487 117 560 164 S686 278 776 243 S860 178 912 195"/>
+  </circle>
 
-  <text x="480" y="210" text-anchor="middle" class="title">ge-onu</text>
-  <text x="480" y="247" text-anchor="middle" class="tagline">a little curious, a little kind.</text>
+  <circle r="2.1" fill="#E6B85C" opacity=".82">
+    <animateMotion dur="43s" begin="-21s" repeatCount="indefinite"
+      path="M72 185 C150 144 207 168 271 210 S401 283 481 239 S607 128 675 151 S788 226 902 190"/>
+  </circle>
+
+  <circle r="1.8" fill="#E9A497" opacity=".78">
+    <animateMotion dur="34s" begin="-7s" repeatCount="indefinite"
+      path="M143 76 C233 116 284 101 347 66 S468 51 527 96 S636 183 713 144 S802 69 888 91"/>
+  </circle>
+
+  <circle r="1.6" fill="#7C8CF2" opacity=".7">
+    <animateMotion dur="51s" begin="-31s" repeatCount="indefinite"
+      path="M97 287 C185 248 241 271 315 289 S449 303 518 273 S647 201 713 220 S824 294 910 262"/>
+  </circle>
+
+  <circle r="1.5" fill="#83C6A7" opacity=".66">
+    <animateMotion dur="46s" begin="-18s" repeatCount="indefinite"
+      path="M64 135 C117 193 192 214 263 183 S391 90 460 118 S596 226 668 202 S797 107 906 144"/>
+  </circle>
+
+  <circle r="1.4" fill="#E6B85C" opacity=".62">
+    <animateMotion dur="39s" begin="-27s" repeatCount="indefinite"
+      path="M118 57 C174 99 231 129 302 121 S438 64 511 77 S642 146 722 132 S839 82 897 111"/>
+  </circle>
+
+  <!-- locally drifting points -->
+  <circle cx="186" cy="92" r="3.7" fill="#7C8CF2" class="tw"/>
+  <circle cx="805" cy="106" r="4.1" fill="#83C6A7" class="tw" style="animation-delay:-4s"/>
+  <circle cx="245" cy="269" r="3.5" fill="#E9A497" class="tw" style="animation-delay:-7s"/>
+  <circle cx="715" cy="265" r="3.4" fill="#E6B85C" class="tw" style="animation-delay:-2s"/>
+
+  <circle cx="156" cy="131" r="1.5" fill="#A3A7AF" class="pulse"/>
+  <circle cx="838" cy="73" r="1.4" fill="#A3A7AF" class="pulse" style="animation-delay:-3s"/>
+  <circle cx="290" cy="292" r="1.4" fill="#A3A7AF"/>
+  <circle cx="675" cy="289" r="1.4" fill="#A3A7AF" class="pulse" style="animation-delay:-5s"/>
+  <circle cx="397" cy="71" r="1.3" fill="#A3A7AF" opacity=".52"/>
+  <circle cx="572" cy="278" r="1.3" fill="#A3A7AF" opacity=".52"/>
+
+  <text x="480" y="158" text-anchor="middle" class="title">ge-onu</text>
+  <text x="480" y="193" text-anchor="middle" class="tagline">a little curious, a little kind.</text>
 </svg>
