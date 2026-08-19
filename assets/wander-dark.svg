@@ -1,0 +1,17 @@
+<svg width="960" height="170" viewBox="0 0 960 170" fill="none" xmlns="http://www.w3.org/2000/svg">
+<style>
+  .l { stroke:#8B93A1; stroke-width:1; stroke-dasharray:2 9; }
+  .a{fill:#98A6FF}.b{fill:#FFB5A7}.c{fill:#A7E3C6}.d{fill:#FFD27A}.n{fill:#6F7785}
+  @keyframes x1{0%,100%{transform:translate(0,0)}50%{transform:translate(18px,-6px)}}
+  @keyframes x2{0%,100%{transform:translate(0,0)}50%{transform:translate(-14px,8px)}}
+  @keyframes op{0%,20%,100%{opacity:0}40%,70%{opacity:.24}}
+  #g1{animation:x1 18s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+  #g2{animation:x2 23s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+  #g3{animation:x1 29s ease-in-out infinite reverse;transform-box:fill-box;transform-origin:center}
+  .fade{animation:op 18s ease-in-out infinite}
+</style>
+<path class="l fade" d="M182 97 C290 35 385 54 475 90 C566 127 663 130 785 66"/>
+<g id="g1"><circle cx="183" cy="98" r="4" class="a"/><circle cx="218" cy="68" r="2" class="n"/></g>
+<g id="g2"><circle cx="476" cy="90" r="5" class="c"/><circle cx="518" cy="116" r="2.4" class="d"/></g>
+<g id="g3"><circle cx="786" cy="66" r="4.5" class="b"/><circle cx="734" cy="111" r="2" class="n"/></g>
+</svg>

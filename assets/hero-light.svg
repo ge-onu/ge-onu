@@ -1,0 +1,82 @@
+<svg width="960" height="430" viewBox="0 0 960 430" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="bg" x1="50" y1="30" x2="910" y2="400" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FBF8F2"/>
+      <stop offset="1" stop-color="#F4F0E8"/>
+    </linearGradient>
+  </defs>
+
+  <style>
+    .title { font: 600 40px ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; letter-spacing: 2px; fill: #262831; }
+    .tagline { font: 400 19px ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; letter-spacing: .6px; fill: #727784; }
+    .line { stroke: #8C919C; stroke-width: 1; stroke-linecap: round; }
+    .tiny { fill: #A2A6AF; }
+    .blue { fill: #7C8CF2; }
+    .peach { fill: #E9A497; }
+    .mint { fill: #83C6A7; }
+    .gold { fill: #E6B85C; }
+
+    @keyframes driftA { 0%,100%{transform:translate(0,0)} 45%{transform:translate(13px,-8px)} 72%{transform:translate(5px,6px)} }
+    @keyframes driftB { 0%,100%{transform:translate(0,0)} 40%{transform:translate(-11px,8px)} 75%{transform:translate(7px,2px)} }
+    @keyframes driftC { 0%,100%{transform:translate(0,0)} 52%{transform:translate(8px,10px)} 80%{transform:translate(-5px,4px)} }
+    @keyframes breathe { 0%,100%{opacity:.42} 50%{opacity:1} }
+    @keyframes lineA { 0%,18%,100%{opacity:0} 32%,56%{opacity:.22} 72%{opacity:0} }
+    @keyframes lineB { 0%,38%,100%{opacity:0} 52%,73%{opacity:.18} 88%{opacity:0} }
+    @keyframes dash { from{stroke-dashoffset:24} to{stroke-dashoffset:0} }
+
+    #a { animation: driftA 19s ease-in-out infinite; transform-box: fill-box; transform-origin:center; }
+    #b { animation: driftB 23s ease-in-out infinite; transform-box: fill-box; transform-origin:center; }
+    #c { animation: driftC 17s ease-in-out infinite; transform-box: fill-box; transform-origin:center; }
+    #d { animation: driftA 26s ease-in-out infinite reverse; transform-box: fill-box; transform-origin:center; }
+    #e { animation: driftB 21s ease-in-out infinite reverse; transform-box: fill-box; transform-origin:center; }
+    #f { animation: driftC 28s ease-in-out infinite reverse; transform-box: fill-box; transform-origin:center; }
+
+    #l1 { animation: lineA 19s ease-in-out infinite, dash 5s linear infinite; stroke-dasharray: 3 7; }
+    #l2 { animation: lineB 23s ease-in-out infinite, dash 6s linear infinite reverse; stroke-dasharray: 3 8; }
+    #l3 { animation: lineA 27s ease-in-out infinite 4s, dash 7s linear infinite; stroke-dasharray: 2 9; }
+    .pulse { animation: breathe 5.5s ease-in-out infinite; }
+  </style>
+
+  <rect x="1" y="1" width="958" height="428" rx="28" fill="url(#bg)" stroke="#E6E0D7"/>
+
+  <path id="l1" class="line" d="M188 121 C286 74 355 102 424 165"/>
+  <path id="l2" class="line" d="M548 151 C644 100 718 131 792 205"/>
+  <path id="l3" class="line" d="M277 302 C366 350 574 350 678 288"/>
+
+  <g id="a">
+    <circle cx="176" cy="126" r="4.5" class="blue" filter="url(#softGlow)"/>
+    <circle cx="159" cy="148" r="2" class="tiny"/>
+  </g>
+  <g id="b">
+    <circle cx="300" cy="77" r="6" class="peach"/>
+    <circle cx="319" cy="94" r="2.5" class="gold pulse"/>
+  </g>
+  <g id="c">
+    <circle cx="798" cy="203" r="5.5" class="mint" filter="url(#softGlow)"/>
+    <circle cx="824" cy="180" r="2" class="tiny"/>
+  </g>
+  <g id="d">
+    <circle cx="693" cy="292" r="6.5" class="gold"/>
+    <circle cx="715" cy="315" r="2.2" class="blue pulse"/>
+  </g>
+  <g id="e">
+    <circle cx="274" cy="306" r="5.2" class="mint"/>
+    <circle cx="250" cy="287" r="2" class="tiny"/>
+  </g>
+  <g id="f">
+    <circle cx="866" cy="91" r="3.5" class="peach"/>
+    <circle cx="93" cy="244" r="3" class="gold pulse"/>
+  </g>
+
+  <circle cx="407" cy="111" r="2.2" class="tiny pulse"/>
+  <circle cx="555" cy="92" r="1.8" class="tiny"/>
+  <circle cx="628" cy="350" r="2.1" class="tiny pulse"/>
+  <circle cx="365" cy="352" r="1.8" class="tiny"/>
+
+  <text x="480" y="210" text-anchor="middle" class="title">ge-onu</text>
+  <text x="480" y="247" text-anchor="middle" class="tagline">a little curious, a little kind.</text>
+</svg>
