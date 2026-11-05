@@ -1,32 +1,38 @@
 ## 이건우 (Geonwoo Lee)
 
-클라우드·인프라 엔지니어(신입)를 준비하고 있습니다.<br>
-AI로 운영을 개선하는 일(AIOps)을 성장 방향으로 두고 있습니다.
+클라우드 · 네트워크 · 인프라 · AI/ML 엔지니어 직무에 지원하는 신입입니다.<br>
+AI·ML 워크플로우와 이를 받치는 인프라·운영으로 성장하려 합니다.
 
-[Portfolio](https://geonu.site) · [LinkedIn](https://www.linkedin.com/in/geonwooleekr) · [Email](mailto:goonbam009@gmail.com)
+[Portfolio](https://geonu.site) · [이력 요약 PDF](https://geonu.site/resume.pdf) · [LinkedIn](https://www.linkedin.com/in/geonwooleekr) · [Email](mailto:goonbam009@gmail.com)
 
 ### 대표 사례
 
-- **MealPlanning: AI/ML 담당** ([상세](https://geonu.site/projects/mealplanning/) · [fork](https://github.com/ge-onu/mealplanning) · [데모](https://app.mealbong.cloud))
-  - 더존비즈온 Cloud DX Academy 6기 최종 팀 프로젝트(5인, 최우수상)에서 AI/ML을 맡았습니다.
-  - Guardrail 오탐 원인을 찾고 근거 범위 수정을 결정해, 동일 275건 기준 통과 건수를 166건에서 247건으로 늘렸습니다.
-  - LLM 15종 비교 평가 기록을 정리했고, 추천 이벤트의 session_id 전달 누락을 확인했습니다.
-- **포트폴리오** ([geonu.site](https://geonu.site))
-  - 프로젝트마다 담당 범위와 확인 근거를 나눠 정리했습니다.
-- **개인 실습** ([Kubernetes 실습](https://geonu.site/projects/kubernetes-lab/) · [RAG Retrieval PoC](https://geonu.site/projects/rag-retrieval-poc/) · [디딤](https://geonu.site/projects/didim/))
-  - Kubernetes 장애 대응 실습과 RAG Retrieval PoC를 개인 프로젝트로 진행했습니다.
-  - 취업 준비용 개인 상황판 디딤과 메일 분류 도구 mail-sift를 만들었습니다.
+- **Mealplanning · AI/ML 담당** ([상세](https://geonu.site/projects/mealplanning/) · [fork](https://github.com/ge-onu/mealplanning) · [데모](https://app.mealbong.cloud))
+  - 더존비즈온 Cloud DX Academy 6기 최종 팀 프로젝트(5인, 최우수상)에서 핵심 AI 기능의 PoC·구현·트러블슈팅을 대부분 맡았습니다.
+  - 응답 검증 오탐 원인을 찾아 근거 범위 수정을 이끌었고, 같은 275건에서 통과가 166건에서 247건으로 늘었습니다.
+  - LLM 후보 15종을 누적 1,750건 평가 기록으로 비교했고, AI 기능 12종의 서버리스 전환을 판정해 Lambda 등 AWS 리소스를 Terraform으로 작성했습니다.
+  - 추천 이벤트의 session_id 누락을 Frontend → API → Event Storage → Training Dataset 순서로 추적해 전달 경로를 고쳤습니다.
+- **Kubernetes Multi-node Lab** ([상세](https://geonu.site/projects/kubernetes-lab/))
+  - kubeadm 멀티노드 개인 실습에서 ImagePull·Service·RBAC·PVC 문제를 Event와 리소스 상태로 좁혔습니다.
+- **디딤돌 · 개인 웹앱** ([상세](https://geonu.site/projects/didim/))
+  - PC 한 대에서 FastAPI를 127.0.0.1에만 띄우고, 포트를 열지 않은 채 Cloudflare Tunnel로 공개했습니다.
+- **RAG 챗봇 거누** ([상세](https://geonu.site/projects/rag-retrieval-poc/))
+  - BM25 검색과 답변 허용 판단을 나눈 PoC를 Cloudflare Workers에 배포해, 포트폴리오 공개 기록으로만 답하게 했습니다.
 
 ### 기술
 
 **직접 해 본 것**<br>
-Python · FastAPI · LLM 평가 · Guardrail · RAG · Kubernetes(개인 실습) · Git · GitHub
+Python · PostgreSQL/SQL · LLM 평가 · AWS Lambda · SQS · SNS · S3 · Terraform · Cloudflare Tunnel · Workers · FastAPI · Git · GitHub
 
-**팀 프로젝트 환경** (MealPlanning, 팀원이 구축한 범위)<br>
-Docker · Kubernetes(kubeadm → AWS EKS) · AWS · ArgoCD · Prometheus · Grafana
+**개인 실습**<br>
+Linux(Ubuntu) · Kubernetes(kubeadm) · Calico · Ingress · NetworkPolicy · RBAC · HPA/KEDA · Prometheus · Grafana
 
-**학습 중**<br>
-Linux · Terraform · GitHub Actions · Nginx · GCP · MySQL · MongoDB · Redis · OpenAI · CKA 준비
+**팀 공동 설계** (Mealplanning, 도구 선택은 팀이 함께 · 설치·운영은 인프라 담당 팀원)<br>
+Amazon EKS · Argo CD · CI/CD
+
+### 자격
+
+네트워크관리사 2급 (2026.06) · 리눅스마스터 2급 (2026.07) · CKA 준비 중
 
 <br>
 
