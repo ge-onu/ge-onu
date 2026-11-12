@@ -19,6 +19,20 @@ AI·ML 워크플로우와 이를 받치는 인프라·운영으로 성장하려 
 - **RAG 챗봇 거누** ([상세](https://geonu.site/projects/rag-retrieval-poc/))
   - BM25 검색과 답변 허용 판단을 나눈 PoC를 Cloudflare Workers에 배포해, 포트폴리오 공개 기록으로만 답하게 했습니다.
 
+### 비공개로 운영 중인 저장소
+
+운영 중인 서비스와 개인 자료가 들어 있어 코드는 비공개로 두고, 무엇을 했는지만 적습니다.<br>
+구현에는 AI 코딩 도구(Claude Code · Codex)와 AI 에이전트(Aside)를 활용했고, 설계 · 검증 · 운영 판단은 직접 했습니다.
+
+| 저장소 | 무엇인가 | 한 일 |
+|---|---|---|
+| `didimdol` | 취업 준비 웹앱 [didimdol.site](https://didimdol.site) | FastAPI · SQLite를 WSL에서 systemd 사용자 서비스로 띄우고 Cloudflare Tunnel로 공개. 공고 우선순위, CKA 모의고사 해설, 메일 요약, 생각 정리(Codex · Jev · Claude 역할 분담) 기능. 자동 시험과 매일 DB 백업 |
+| `aside-ops` | 개인 운영 감시 · 아침 요약 | LLM 없이 규칙만으로 서비스 · 터널 · 백업 · cron 상태를 30분마다 점검하고 Slack으로 알림. 아침 요약에 마감 임박 공고 · 결정할 일 · 안 올린 커밋 표시 |
+| `mail-sift` | 메일 분류 · 요약 도구 | Gmail · 네이버 메일을 AI로 분류 · 요약해 Slack으로 알림. 로그인 만료 · 격리 메일 재처리 같은 장애를 겪고 복구 절차를 남김 |
+| `jev-lab` | 판단 모델 Jev 실험장 | 메일 분류 · 공고 분류 · 알림 등급 등 5개 실험(1,613건)으로 쓸 곳과 버릴 곳을 판정. 공고 분류만 채택(정확도 88.2%, 확신 0.9 이상에서 96.4%) |
+| `k8s-incident-response-lab` | Kubernetes 장애 재현 실습 | kind 클러스터에 장애 5종(CrashLoopBackOff, Ingress 5xx, NetworkPolicy · DNS, Pending, readiness)을 재현하는 시나리오와 진단 CLI. 직접 진단 연습은 진행 중 |
+| `infra-aiops-career-hub` | 커리어 관리 저장소 | 지원 기록, 결정 기록, 채용 공고 수집, CKA 실습 문제 · 채점 스크립트를 한 곳에서 관리 |
+
 ### 기술
 
 **직접 해 본 것**<br>
